@@ -1,15 +1,12 @@
 fun main() {
-	val pair: Pair<String, Double> = Pair("Joao", 100.0)
-	val map1 = mapOf(pair)
+    val pair: Pair<String, Funcionario> = Pair("Joao", Funcionario("Joao", 100.11, "Clt"))
+    val map1 = mapOf(pair)
 
-	map1.forEach { (t, u) -> println("Chave: $t - Valor: $u") }
+    var listaFuncionarios = mutableListOf<Funcionario>()
+    map1.forEach { (a, funcionario) -> listaFuncionarios.add(funcionario) }
 
-
-	val  map2 = mapOf(
-			"Pedro" to 200.0,
-			"Cielio" to 2030.0
-	)
-
-	map2.forEach { (t, u) -> println("Chave: $t - Valor: $u") }
-
+    listaFuncionarios.forEach { println(it) }
+    val regexHexa = """0x.*""".toRegex()
+    var saida = ""
+    var teste = regexHexa.containsMatchIn(saida)
 }
